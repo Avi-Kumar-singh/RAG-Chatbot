@@ -23,10 +23,13 @@ git clone https://github.com/Avi-Kumar-singh/RAG-Chatbot.git
 cd RAG-Chatbot
 
 
-
+## **Install dependencies**
 pip install -r requirements.txt
 
-
+## S**et up environment variables**
 PDF_PATH=./coffee_recipes.pdf
 
+4. **Run the App**
+```bash
+streamlit run rag_chatbot.py
 
