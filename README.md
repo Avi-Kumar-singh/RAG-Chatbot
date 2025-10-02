@@ -15,17 +15,18 @@ It allows users to ask questions about a PDF document (coffee recipes in this ca
 
 ---
 
-## ⚡ Installation 
+## ⚡ Installation
 
-1. **Clone the repository**
+1. Clone the repository
 ```bash
 git clone https://github.com/Avi-Kumar-singh/RAG-Chatbot.git
 cd RAG-Chatbot
 
 
-## ⚡ **Install dependencies**
+
 pip install -r requirements.txt
 
-## ⚡ Set up environment variables
+
 PDF_PATH=./coffee_recipes.pdf
+
 
