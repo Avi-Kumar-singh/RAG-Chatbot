@@ -22,6 +22,7 @@ It allows users to ask questions about a PDF document (coffee recipes in this ca
 git clone https://github.com/Avi-Kumar-singh/RAG-Chatbot.git
 cd RAG-Chatbot
 
+---
 
 ## **Install dependencies**
 pip install -r requirements.txt
