@@ -1,0 +1,26 @@
+# Load environment variables from .env file
+python-dotenv
+
+# For building interactive web apps
+streamlit
+
+# Core LangChain library (chains, prompts, etc.)
+langchain
+
+# Provides core utilities for LangChain
+langchain-core
+
+# LangChain integration with Hugging Face models
+langchain-huggingface
+
+# Hugging Face Hub client (required if you use HuggingFaceEndpoint or ChatHuggingFace)
+huggingface_hub
+
+# Provides community integrations (Ollama, HuggingFace, etc.)
+langchain-community
+
+# Ollama integration for embeddings + LLM
+langchain-ollama
+
+# Chroma vector database
+chromadb
