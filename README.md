@@ -30,3 +30,8 @@ pip install -r requirements.txt
 Create a `.env` file in the root directory and add:
 ```bash
 PDF_PATH=./coffee_recipes.pdf
+
+
+### 4. Run the App
+```bash
+streamlit run rag_chatbot.py
