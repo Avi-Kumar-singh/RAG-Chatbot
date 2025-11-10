@@ -19,20 +19,10 @@ PDF_PATH = os.getenv("PDF_PATH", "./coffee_recipes.pdf")
 documents =  PyPDFLoader(PDF_PATH).load()
 
 #2 Split in chunk
-# RecursiveCharacterTextSplitter => is the engine/tool that knows how to break text apart
-# split_documents()=> is just a method you call on that splitter — it loops through your Documents and tells the splitter to apply its rules to each one
-# recursive = something that repeats the same logic step by step, drilling deeper each time if chunk_size=20
-# Try to split by paragraphs → still too big.
-# Try to split by sentences → still too big.
-# Try to split by words → still too big.
-# Finally split by characters into chunks of ≤ 20.
 text_splitter = RecursiveCharacterTextSplitter(chunk_size = 500, chunk_overlap = 50)
 docs = text_splitter.split_documents(documents)
 
 #3 Generate and store Embedding
-# Embeddings → turns text into math (vectors).
-# Vectorstore (Chroma) → stores these vectors + metadata for fast similarity search.
-# Retriever → queries the vectorstore to fetch the best matching chunks when a user asks something.
 embeddings = OllamaEmbeddings(model="llama3.2")
 vectorstore = Chroma.from_documents(docs, embedding = embeddings) # pass each docs through embeddings model → get vectors and Store them in a Chroma vector database
 retriever = vectorstore.as_retriever(search_kwargs = {"k":5})
@@ -99,6 +89,7 @@ if query:  # query is the text the user typed in Streamlit (st.text_input)
 if st.session_state.chat_history:
     st.subheader("Chat History")
     for msg in st.session_state.chat_history:
-        st.markdown(f"**🧑 User:** {msg['user']}")
-        st.markdown(f"**🤖 Assistant:** {msg['bot']}")
+        st.markdown(f"** User:** {msg['user']}")
+        st.markdown(f"** Assistant:** {msg['bot']}")
         st.markdown("---")
+
