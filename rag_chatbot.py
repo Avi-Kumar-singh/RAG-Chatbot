@@ -12,8 +12,6 @@ import streamlit as st
 ## Build Knowledge base ----------------------------------------------------------------------------
 
 #1 Load externel knoledege
-# Normally in Python, the backslash \ is treated as an escape character (\n = newline)(\t = tab)
-# When you add r before the string, Python treats backslashes literally(literal character = takes exactly as you typed)
 load_dotenv()
 PDF_PATH = os.getenv("PDF_PATH", "./coffee_recipes.pdf")
 documents =  PyPDFLoader(PDF_PATH).load()
@@ -92,4 +90,5 @@ if st.session_state.chat_history:
         st.markdown(f"** User:** {msg['user']}")
         st.markdown(f"** Assistant:** {msg['bot']}")
         st.markdown("---")
+
 
